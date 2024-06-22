@@ -1,4 +1,8 @@
-export const DUMMY_USERS = [
+export class UserData {
+    constructor(public id: string, public name: string, public avatar: string) {}
+}
+
+export const DUMMY_USERS: UserData[] = [
     {
         id: 'u1',
         name: 'Jasmine Washington',

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+import { Component, Input, computed, input } from '@angular/core';
+import { DUMMY_USERS, UserData } from '../dummy-users';
 
 @Component({
   selector: 'app-user',
@@ -9,5 +9,8 @@ import { DUMMY_USERS } from '../dummy-users';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  selectedUser = DUMMY_USERS[0];
+  user = input.required<UserData>()
+  imagePath = computed(() => 'users/' + this.user().avatar);
+
+  onSelectUser() {}
 }
